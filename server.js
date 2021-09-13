@@ -10,12 +10,21 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (req, res) => 
 {
   res.send('Hello World!')
-})
+});
+
 
 app.get('/get', (req, res) => 
 {
   res.send('GET from /get');
-})
+});
+
+app.post('/post', (req, res) => 
+{
+    const input = req.body.text;
+
+    res.send('You entered: ' + input);
+});
+
 
 
 app.listen(port, () => 

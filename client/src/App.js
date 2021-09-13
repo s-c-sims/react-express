@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState }  from 'react';
 
-function App() {
+const App = () =>
+{
+  const [ msg, setMessage ] = useState('');
+
+  const getBackend = async() =>
+  {
+    await fetch('/get')
+    .then(res => res.text())
+    .then(result => setMessage(result));
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <h1>Hello World</h1>
+
+      <button onClick={getBackend}>GET to backend</button>
+
+      <p>{msg}</p>
     </div>
   );
-}
+};
 
 export default App;

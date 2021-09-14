@@ -14,8 +14,6 @@ const App = () =>
 
   };
 
-
-
   const getBackend = async() =>
   {
     await fetch('/get')
@@ -38,7 +36,7 @@ const App = () =>
   return (
     <div className="App">
 
-      <h1>Hello World</h1>
+      <h1>React Express</h1>
 
       <button onClick={getBackend}>GET to backend</button>
 
